@@ -9,22 +9,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="min-h-screen bg-gray-900 text-white relative">
+  <body class="bg-gray-900 px-8 text-white relative">
     <header>
       <div class="container flex justify-between items-baseline py-12">
-        <a class="font-bold text-xl uppercase" href="/">BLOG ON RAILS</a>
+        <a class="font-bold tracking-tight text-2xl uppercase text-indigo-300 hover:text-white" href="/">BLOG ON RAILS</a>
         <nav>
-          <ul class="flex gap-x-6">
+          <ul class="gap-x-6 hidden sm:flex">
             <li><a class="hover:underline" href="/">Users</a></li>
             <li><a class="hover:underline" href="/">About</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <section class="container">
+    <section class="container min-h-[70vh]">
       <%= yield %>
     </section>
-    <footer class="container absolute bottom-0 inset-x-0 text-center py-6">
+    <footer class="container text-center py-6 mt-12">
       <p>Developed by: <a href="https://d4nielj.netlify.app/" target="_blank" rel="noopener noreferrer">D4nielJ</a></p>
       <p>Created using: Ruby on Rails, Tailwindcss and more.</p>
     </footer>
