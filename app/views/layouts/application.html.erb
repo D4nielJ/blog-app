@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="min-h-screen bg-gray-900">
+  <body class="min-h-screen bg-gray-900 text-white relative">
     <header>
-      <a href="/">logo</a>
-      <nav>
-        <ul>
-          <li><a href="/">users</a></li>
-        </ul>
-      </nav>
+      <div class="container flex justify-between items-baseline py-12">
+        <a class="font-bold text-xl uppercase" href="/">BLOG ON RAILS</a>
+        <nav>
+          <ul class="flex gap-x-6">
+            <li><a class="hover:underline" href="/">Users</a></li>
+            <li><a class="hover:underline" href="/">About</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <%= yield %>
-    <footer>
-      <p>Developed by: D4nielJ</p>
-      <p>Created using: Ruby on Rails and more.</p>
+    <section class="container">
+      <%= yield %>
+    </section>
+    <footer class="container absolute bottom-0 inset-x-0 text-center py-6">
+      <p>Developed by: <a href="https://d4nielj.netlify.app/" target="_blank" rel="noopener noreferrer">D4nielJ</a></p>
+      <p>Created using: Ruby on Rails, Tailwindcss and more.</p>
     </footer>
   </body>
 </html>
