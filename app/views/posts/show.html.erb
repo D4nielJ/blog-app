@@ -1,0 +1,69 @@
+<div class="flex flex-col sm:px-12 bg-gray-800 rounded-lg shadow-lg">
+  <%# Posts %>
+  <div class="flex flex-col pb-6 pt-12 gap-y-12">
+    <article>
+      <a href="/users/1/posts/1">
+        <div class="flex flex-col">
+          <div class="flex justify-between mb-4">
+            <h2 class="font-bold text-3xl text-red-400 opacity-80 mb-4">Post Title #1</h2>
+            <div class="self-end flex gap-x-6 text-gray-400 text-opacity-75 mb-4">
+              <p>Likes: <span class="text-red-400">6</span></p>
+              <p>Comments: <span class="text-red-400">6</span></p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-12"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Provident, quos ipsum. Tenetur odio quis molestias id ipsam, atque non aperiam repudiandae 
+            tempore quidem quam numquam reprehenderit explicabo! Numquam deserunt explicabo enim culpa 
+            fugit quam, quis consequuntur vel, maxime velit illo. <br />
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Recusandae provident consequuntur excepturi aliquid, dignissimos 
+            est enim ut soluta cupiditate eligendi explicabo, cum nihil perspiciatis 
+            natus maiores incidunt repudiandae! Aperiam provident unde dolore, 
+            officia dolor mollitia aut temporibus non libero recusandae incidunt 
+            in consectetur deserunt voluptas repellendus maiores ipsam eos, amet 
+            laborum! Sit molestiae non laudantium, in esse cupiditate sed molestias.
+          </div>
+        </a>
+        <%# Comments %>
+        <div class="border-t border-opacity-20 mb-12"></div>
+        <div class="flex mb-6">
+          <div class="flex-none w-14 h-14 relative mr-6">
+            <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+          </div>
+          <div class="bg-gray-900 px-6 py-2 rounded-lg">
+            <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+            <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+          </div>
+        </div>
+        <div class="flex mb-6">
+          <div class="flex-none w-14 h-14 relative mr-6">
+            <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+          </div>
+          <div class="bg-gray-900 px-6 py-2 rounded-lg">
+            <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+            <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+          </div>
+        </div>
+        <div class="flex mb-6">
+          <div class="flex-none w-14 h-14 relative mr-6">
+            <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+          </div>
+          <div class="bg-gray-900 px-6 py-2 rounded-lg">
+            <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+            <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+          </div>
+        </div>
+      </article>
+      <a href="/users/1/posts" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Atrás</a>
+    </div>
+  </div>
