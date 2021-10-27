@@ -1,0 +1,98 @@
+<div class="flex flex-col sm:px-12 bg-gray-800 rounded-lg shadow-lg">
+  <div class="flex flex-col sm:flex-row py-6">
+    <div class="flex-none w-full h-40 sm:w-40 relative">
+      <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-lg' %>
+    </div>
+    <div class="w-full flex flex-col items-end py-12 h-32">
+      <a href="/users/1">
+        <h2 class="font-bold text-3xl">User Name</h2>
+      </a>
+      <span class="font-light mb-4">@userName</span>
+      <p class="text-gray-400">Number of posts: <span class="font-bold text-red-400">12</span></p>
+    </div>
+  </div>
+  <%# Posts %>
+  <div class="flex flex-col py-6 gap-y-12">
+    <article>
+      <div class="border-t border-opacity-50 mb-6"></div>
+      <a href="/users/1/posts/1">
+        <div class="flex flex-col">
+          <h4 class="font-bold text-lg text-red-400 opacity-80 mb-4">Post Title #1</h4>
+          <p class="text-gray-400 mb-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Autem doloribus iste quibusdam eligendi, excepturi impedit nisi.
+            Dolorem mollitia aut maxime in, voluptatibus atque... </p>
+          <div class="self-end flex gap-x-6 text-gray-400 text-opacity-75 mb-4">
+            <p>Likes: <span class="text-red-400">6</span></p>
+            <p>Comments: <span class="text-red-400">6</span></p>
+          </div>
+        </div>
+      </a>
+      <%# Comments %>
+      <div class="border-t border-opacity-20 mb-6"></div>
+      <div class="flex mb-6">
+        <div class="flex-none w-14 h-14 relative mr-6">
+          <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+        </div>
+        <div class="bg-gray-900 px-6 py-2 rounded-lg">
+          <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+          <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+        </div>
+      </div>
+      <div class="flex mb-6">
+        <div class="flex-none w-14 h-14 relative mr-6">
+          <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+        </div>
+        <div class="bg-gray-900 px-6 py-2 rounded-lg">
+          <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+          <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="border-t border-opacity-50 mb-6"></div>
+      <a href="/users/1/posts/1">
+        <div class="flex flex-col">
+          <h4 class="font-bold text-lg text-red-400 opacity-80 mb-4">Post Title #2</h4>
+          <p class="text-gray-400 mb-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Autem doloribus iste quibusdam eligendi, excepturi impedit nisi.
+            Dolorem mollitia aut maxime in, voluptatibus atque... </p>
+          <div class="self-end flex gap-x-6 text-gray-400 text-opacity-75 mb-4">
+            <p>Likes: <span class="text-red-400">6</span></p>
+            <p>Comments: <span class="text-red-400">6</span></p>
+          </div>
+        </div>
+      </a>
+      <%# Comments %>
+      <div class="border-t border-opacity-20 mb-6"></div>
+      <div class="flex mb-6">
+        <div class="flex-none w-14 h-14 relative mr-6">
+          <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+        </div>
+        <div class="bg-gray-900 px-6 py-2 rounded-lg">
+          <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+          <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+        </div>
+      </div>
+      <div class="flex mb-6">
+        <div class="flex-none w-14 h-14 relative mr-6">
+          <%= image_tag 'portrait-medium.jpg',
+            alt: 'user',
+            class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+        </div>
+        <div class="bg-gray-900 px-6 py-2 rounded-lg">
+          <h5 class="font-bold text-gray-400 text-sm mb-1">User Name</h5>
+          <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis id obcaecati, voluptates voluptatum quaerat.</p>
+        </div>
+      </div>
+    </article>
+    <a href="/users/1/posts" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Load more...</a>
+  </div>
+</div>
