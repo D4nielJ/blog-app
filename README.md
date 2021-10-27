@@ -44,6 +44,10 @@ To get a local copy up and running follow these simple example steps.
 - Run `rails s`
 - Open `localhost:3000` in your web browser
 
+### Troubleshooting
+
+If you encounter any issues with webpacker, try to run `bundle exec rake webpacker:install`
+
 ## Authors
 
 👤 **Daniel Jaramillo**
