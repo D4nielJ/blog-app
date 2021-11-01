@@ -12,7 +12,7 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(quantity)
   end
 
-  def recent_comments_5
+  def five_recent_posts
     recent_comments(5)
   end
 end

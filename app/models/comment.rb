@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
     posts.order(created_at: :desc).limit(quantity)
   end
 
-  def recent_posts_3
+  def three_recent_posts
     recent_posts(3)
   end
 
