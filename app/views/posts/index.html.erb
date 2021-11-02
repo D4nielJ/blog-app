@@ -21,9 +21,15 @@
   </div>
   <%# Posts %>
   <div class="flex flex-col py-6 gap-y-12">
-    <% @posts.each do |post| %>
+    <% posts = @user.posts.limit(3) if @limit.nil? %>
+    <% posts = @user.posts if @limit == 'all' %>
+    <% posts.each do |post| %>
       <%= render 'index_post', post: post %>
     <% end %>
-    <a href="/users/<%= @user.id %>/posts" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Load more...</a>
+    <% if @limit.nil? %>
+      <a href="/users/<%= @user.id %>/posts?limit=all" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Load more...</a>
+    <% else %>
+      <a href="/users/<%= @user.id %>/posts" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Show less...</a>
+    <% end %>
   </div>
 </div>
