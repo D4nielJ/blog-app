@@ -1,0 +1,25 @@
+<article>
+  <div class="border-t border-opacity-50 mb-6"></div>
+  <a href="/users/1/posts/<%= post.id %>">
+    <div class="flex flex-col">
+      <h4 class="font-bold text-lg text-red-400 opacity-80 mb-4">
+        <%= post.title %>
+      </h4>
+      <p class="text-gray-400 mb-2">
+        <%= post.text %>
+      </p>
+      <div class="self-end flex gap-x-6 text-gray-400 text-opacity-75">
+        <p>Likes:
+          <span class="text-red-400">
+            <%= post.likes_counter %>
+          </span>
+        </p>
+        <p>Comments: 
+          <span class="text-red-400">
+            <%= post.comments_counter %>
+          </span>
+        </p>
+      </div>
+    </div>
+  </a>
+</article>
