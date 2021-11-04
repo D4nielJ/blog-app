@@ -22,6 +22,17 @@ RSpec.describe Post, type: :model do
     expect(@post).to_not be_valid
   end
 
+  it 'should be not valid when title to long' do
+    @post.title = "I am Aragorn son of Arathorn, and am called Elessar,\s
+                  the Elfstone, Dúnadan, the heir of Isildur Elendil's son of Gondor.\s
+                  Here is the sword that was broken and is forged again!
+
+                  I am Aragorn son of Arathorn, and am called Elessar,\s
+                  the Elfstone, Dúnadan, the heir of Isildur Elendil's son of Gondor.\s
+                  Here is the sword that was broken and is forged again!"
+    expect(@post).to_not be_valid
+  end
+
   it 'should be not valid when comments_counter not number' do
     @post.comments_counter = nil
     expect(@post).to_not be_valid
