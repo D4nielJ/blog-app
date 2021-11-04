@@ -5,9 +5,13 @@
               class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
   </div>
 
-  <%= form_with model: [@user, @post, @post.comments.build] do |f| %>
+  <%= form_with model: [@user, @post, @post.comments.build],
+  :html => { :class => "flex items-start flex-wrap"} do |f| %>
     <%= f.text_field :text,
-    placeholder: "Write something..." %>
-    <%= f.submit "Comment" %>
+    placeholder: "Write something...", 
+    class: "bg-gray-900 px-6 py-2 rounded-lg border-0 text-gray-400 text-sm mb-2",
+    required: true %>
+    <%= f.submit "Comment",
+    class: "bg-gray-700 px-6 py-2 sr-only focus:not-sr-only" %>
   <% end %>
 </div>
