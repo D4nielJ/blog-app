@@ -5,7 +5,7 @@
               class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
   </div>
 
-  <%= form_with model: [@current_user, @post, @post.comments.build] do |f| %>
+  <%= form_with model: [@user, @post, @post.comments.build] do |f| %>
     <%= f.text_field :text,
     placeholder: "Write something..." %>
     <%= f.submit "Comment" %>
