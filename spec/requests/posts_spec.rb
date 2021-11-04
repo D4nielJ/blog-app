@@ -9,7 +9,7 @@ RSpec.describe 'Posts', type: :request do
                        Here is the sword that was broken and is forged again!",
                         posts_counter: 0)
 
-    @post = Post.create(title: 'My title', text: 'My text', author_id: @user.id)
+    @post = Post.create(title: 'My title', text: 'My text', author_id: @user.id, comments_counter: 0, likes_counter: 0)
   end
 
   describe 'GET /index' do
