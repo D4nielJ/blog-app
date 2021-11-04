@@ -1,0 +1,16 @@
+<%= form_with model: [@current_user, @current_user.posts.build],
+  :html => { :class => "flex flex-col items-start gap-y-4"} do |f| %>
+
+  <%= f.label :title, class: "sr-only" %>
+  <%= f.text_field :title, 
+  class: "border-0 bg-gray-900 font-bold text-2xl placeholder-indigo-200", 
+  placeholder: "Title..." %>
+
+  <%= f.label :text, class: "sr-only" %>
+  <%= f.text_area :text, 
+    size: "50x12", 
+    class: "border-0 w-full max-w-prose bg-gray-900 placeholder-gray-400 mb-4 resize-none h-auto", 
+    placeholder: "Start writing here..." %>
+
+  <%= f.submit "Post", class: "bg-indigo-700 w-max px-16 py-3 mb-6 cursor-pointer" %>
+<% end %>
