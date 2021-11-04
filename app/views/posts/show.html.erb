@@ -26,15 +26,15 @@
           </p>
         </div>
       </a>
-      
+
       <%# Comments %>
       <% comments = @post.comments %>
-      <% if comments.length > 0 %>
-        <div class="border-t border-opacity-20 mb-12"></div>
-      <% end %>
+      <div class="border-t border-opacity-20 mb-12"></div>
       <% comments.each do |comment| %>
         <%= render 'shared/post_comment', comment: comment %>
       <% end %>
+
+      <%= render 'shared/new_comment' %>
     </article>
     <a href="/users/<%= @user.id %>/posts" class="bg-indigo-700 mx-auto w-max px-16 py-3 mb-6">Atrás</a>
   </div>

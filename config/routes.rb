@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # end
 
   resources :users do
-    resources :posts
+    resources :posts do
+      resources :comments, only: %i[new create]
+    end
   end
 
   get 'new', to: 'posts#new' # new post

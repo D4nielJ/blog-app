@@ -1,0 +1,13 @@
+<div class="flex mb-6">
+  <div class="flex-none w-14 h-14 relative mr-6">
+    <%= image_tag 'portrait-medium.jpg',
+              alt: 'user',
+              class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
+  </div>
+
+  <%= form_with model: [@current_user, @post, @post.comments.build] do |f| %>
+    <%= f.text_field :text,
+    placeholder: "Write something..." %>
+    <%= f.submit "Comment" %>
+  <% end %>
+</div>
