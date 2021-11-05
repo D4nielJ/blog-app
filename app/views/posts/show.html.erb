@@ -28,7 +28,7 @@
       </a>
 
       <%# Comments %>
-      <% comments = @post.comments %>
+      <% comments = @post.comments.includes(:author) %>
       <div class="border-t border-opacity-20 mb-12"></div>
       <% comments.each do |comment| %>
         <%= render 'shared/post_comment', comment: comment %>

@@ -17,11 +17,15 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    @post = @user.posts.create(posts_params)
+    @post = @user.posts.new(posts_params)
+    @post.comments_counter = 0
+    @post.likes_counter = 0
 
-    if @post
+    if @post.save
+      flash[:notice] = 'Post published succesfully'
       redirect_to user_post_path(@user, @post)
     else
+      flash[:error] = @post.errors.messages
       render :new
     end
   end

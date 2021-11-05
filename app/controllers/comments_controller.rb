@@ -9,11 +9,8 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @comment.author = @current_user
 
-    if @comment.save
-      redirect_to user_post_path(@user, @post)
-    else
-      render user_post_path(@user, @post)
-    end
+    flash[:error] = @comment.errors.messages unless @comment.save
+    redirect_to user_post_path(@user, @post)
   end
 
   private
