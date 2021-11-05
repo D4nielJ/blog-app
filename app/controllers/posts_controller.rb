@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Post published succesfully'
       redirect_to user_post_path(@user, @post)
     else
-      flash[:error] = 'Oh no! Something went wrong. Try again later.'
+      flash[:error] = @post.errors.messages
       render :new
     end
   end

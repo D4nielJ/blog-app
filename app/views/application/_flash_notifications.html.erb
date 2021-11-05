@@ -5,7 +5,9 @@
         <%= render 'flash_card', type: type, msg: msg %>
       <% end %>
       <% if type == 'error' %>
-        <%= render 'flash_card', type: type, msg: msg %>
+        <% flash[:error].each do |_k, v| %>
+          <%= render 'flash_card', type: type, msg: v.first %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
