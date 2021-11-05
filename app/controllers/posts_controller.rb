@@ -22,8 +22,10 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
 
     if @post.save
+      flash[:notice] = 'Post published succesfully'
       redirect_to user_post_path(@user, @post)
     else
+      flash[:error] = 'Oh no! Something went wrong. Try again later.'
       render :new
     end
   end

@@ -17,7 +17,17 @@ module.exports = {
         xl: theme('spacing.60'),
       },
     }),
-    extend: {},
+    extend: {
+      animation: {
+        flash: 'flash 6s ease-in-out 1 both',
+      },
+      keyframes: {
+        flash: {
+          '0%, 100%': { transform: 'translateX(300px)', opacity: '0' },
+          '10%, 90%': { transform: 'translateX(0)', opacity: '1' },
+        },
+      },
+    },
   },
   variants: {
     extend: {},
