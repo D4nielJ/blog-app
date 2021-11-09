@@ -1,0 +1,38 @@
+<% input_styles = "border-0 bg-gray-900 placeholder-indigo-200 w-72 rounded" %>
+
+<section class="p-8 bg-gradient-to-br from-indigo-800 to-indigo-900 rounded-lg shadow-lg">
+
+  <h2 class="border-0 text-center max-w-sm mx-auto font-bold text-2xl text-indigo-400">Let's log you in!</h2>
+  <p class="border-0 text-center max-w-sm mx-auto text-xl mb-6 text-indigo-100 opacity-80">We can't wait to see your next post</p>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), 
+  :html => { :class => "flex flex-col items-center gap-y-4"}) do |f| %>
+    <div class="field">
+      <%= f.label :email,
+    class: "sr-only" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+    class: input_styles,
+    placeholder: "Enter your e-mail" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password,
+    class: "sr-only" %>
+      <%= f.password_field :password, autocomplete: "current-password",
+    class: input_styles,
+    placeholder: "Enter your password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "bg-gray-900 w-max px-16 py-3 mb-6 cursor-pointer rounded" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</section>

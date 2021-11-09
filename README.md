@@ -42,7 +42,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-- Run `rails s`
+- To have fast reload enabled, run: `./bin/webpack-dev-server` before starting the server.
+- Run `rails s` to start server
 - Open `localhost:3000` in your web browser
 
 ### Troubleshooting
