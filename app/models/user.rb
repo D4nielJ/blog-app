@@ -19,7 +19,6 @@ class User < ApplicationRecord
   end
 
   def photo_link
-    'no_picture.jpg' unless photo
-    photo
+    photo == '' ? 'no_picture.jpg' : photo
   end
 end
