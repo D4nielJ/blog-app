@@ -17,26 +17,35 @@
       <ul class="gap-x-6 hidden sm:flex items-center">
         <li><a class="hover:underline" href="/">Users</a></li>
         <li><a class="hover:underline" href="/">About</a></li>
-        <li>
-          <a
+        <% if user_signed_in? %>
+          <li>
+            <a
             class="hover:underline hover:text-indigo-400"
             href="/new"
           >
-          
-            <svg
+
+              <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
-              <path
+                <path
                 fill-rule="evenodd"
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
                 clip-rule="evenodd"
               ></path>
-            </svg>
-          </a>
-        </li>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete,
+            class: "font-bold bg-indigo-800 -ml-2 px-6 py-3 rounded-lg hover:bg-indigo-900" %>
+          </li>
+        <% else %>
+          <li><a class="hover:underline" href=<%= new_user_registration_path %>>Sign up</a></li>
+          <li><a class="font-bold bg-indigo-800 -ml-2 px-6 py-3 rounded-lg hover:bg-indigo-900" href=<%= new_user_session_path %>>Sign in</a></li>
+        <% end %>
       </ul>
     </nav>
   </div>
