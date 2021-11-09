@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.7'
 # Use the devise gem as the session and account manager
 gem 'devise'
 
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
