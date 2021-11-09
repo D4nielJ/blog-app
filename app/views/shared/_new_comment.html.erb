@@ -1,16 +1,21 @@
-<div class="flex mb-6">
-  <div class="flex-none w-14 h-14 relative mr-6">
-    <%= image_tag 'portrait-medium.jpg',
+<% if user_signed_in? %>
+  <div class="flex mb-6">
+    <div class="flex-none w-14 h-14 relative mr-6">
+      <%= image_tag 'portrait-medium.jpg',
               alt: 'user',
               class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
-  </div>
+    </div>
 
-  <%= form_with model: [@user, @post, @post.comments.build],
+    <%= form_with model: [@user, @post, @post.comments.build],
   :html => { :class => "flex items-center flex-wrap"} do |f| %>
-    <%= f.text_field :text,
+      <%= f.text_field :text,
     placeholder: "Write something...", 
     class: "bg-gray-900 px-6 py-2 rounded-lg border-0 text-gray-400 text-sm mb-2" %>
-    <%= f.submit "Comment",
+      <%= f.submit "Comment",
     class: "bg-gray-700 px-6 py-2 sr-only focus:not-sr-only" %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="border-t border-opacity-50 mb-6 w-full"></div>
+  <p class="text-center text-gray-400 text-opacity-75">Please <%= link_to 'sign in', new_user_session_path, class: "underline" %> to comment.</p>
+<% end %>
