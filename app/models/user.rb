@@ -17,4 +17,9 @@ class User < ApplicationRecord
   def three_recent_posts
     recent_posts(3)
   end
+
+  def photo_link
+    'no_picture.jpg' unless photo
+    photo
+  end
 end
