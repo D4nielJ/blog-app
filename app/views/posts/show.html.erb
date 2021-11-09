@@ -26,8 +26,10 @@
           </p>
         </div>
       </a>
-      <%= link_to 'Delete', user_post_path(@user, @post), method: :delete if can? :delete, Post %>
-
+      <% if can? :delete, @post %>
+        <%= link_to 'Delete', user_post_path(@user, @post), method: :delete %>
+      <% end %>
+      
       <%# Comments %>
       <% comments = @post.comments.includes(:author) %>
       <div class="border-t border-opacity-20 mb-12"></div>
