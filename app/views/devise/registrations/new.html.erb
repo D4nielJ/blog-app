@@ -1,9 +1,9 @@
 <% input_styles = "border-0 bg-gray-900 placeholder-indigo-200 border border-indigo-200 w-72" %>
 <% pass_placeholder = "Password" %>
-<% pass_placeholder = "Password (#{@minimum_password_length} characters minimun" if @minimum_password_length %>
+<% pass_placeholder = "Password (#{@minimum_password_length} characters minimun)" if @minimum_password_length %>
 
 <h2 class="border-0 text-center max-w-sm mx-auto font-bold text-2xl text-indigo-500">Sign Up.</h2>
-<p class="border-0 text-center max-w-sm mx-auto text-xl mb-4 text-indigo-200 opacity-80">It's quick an easy</p>
+<p class="border-0 text-center max-w-sm mx-auto text-xl mb-4 text-indigo-200 opacity-80">Quick and easy!</p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), 
   :html => { :class => "flex flex-col items-center gap-y-4"}) do |f| %>
