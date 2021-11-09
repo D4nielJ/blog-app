@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="flex mb-6">
     <div class="flex-none w-14 h-14 relative mr-6">
-      <%= image_tag 'portrait-medium.jpg',
+      <%= image_tag current_user.photo_link,
               alt: 'user',
               class: 'absolute inset-0 w-full h-full object-cover rounded-full' %>
     </div>
