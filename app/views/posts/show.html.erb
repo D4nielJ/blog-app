@@ -26,6 +26,7 @@
           </p>
         </div>
       </a>
+      <%= link_to 'Delete', user_post_path(@user, @post), method: :delete if can? :delete, Post %>
 
       <%# Comments %>
       <% comments = @post.comments.includes(:author) %>
