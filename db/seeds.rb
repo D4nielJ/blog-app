@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-  email: 'admin@admin.com',
-  password: 'admin123',
-  password_confirmation: 'admin123',
+  email: 'admin@user.com',
+  password: 'password',
+  password_confirmation: 'password',
   name: 'Admin',
   role: 'admin'
 )
