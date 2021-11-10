@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  
-
   def index
     @user = User.find(params[:user_id])
     @limit = params[:limit] unless params[:limit].nil?
