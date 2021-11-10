@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  # Roles = %i[admin default]
+
   has_many :posts, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
@@ -19,7 +21,10 @@ class User < ApplicationRecord
   end
 
   def photo_link
-    'no_picture.jpg' unless photo
-    photo
+    photo == '' ? 'no_picture.jpg' : photo
+  end
+
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 end

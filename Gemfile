@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Use the devise gem as the session and account manager
 gem 'devise'
+# Use cancancan to setup roles and manage authorization
+gem 'cancancan', '~> 1.9'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
