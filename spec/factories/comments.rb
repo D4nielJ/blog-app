@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :post do
+  factory :comment do
     text { Faker::Lorem.sentence }
-    author_id { Faker::Number.number(10) }
-    post_id nil
+    author_id { Faker::Number.within(range: 1..10) }
+    post_id { nil }
   end
 end
