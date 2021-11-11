@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   before :each do
-    @user = User.create(name: 'Aragorn II Elessar',
-                        photo: 'link',
-                        bio: "I am Aragorn son of Arathorn, and am called Elessar,\s
-                       the Elfstone, Dúnadan, the heir of Isildur Elendil's son of Gondor.\s
-                       Here is the sword that was broken and is forged again!",
-                        posts_counter: 0)
-
+    @user = User.new(name: 'Aragorn II Elessar',
+                     email: 'aragorn@user.com',
+                     bio: "I am Aragorn son of Arathorn, and am called Elessar,\s
+                      the Elfstone, Dúnadan, the heir of Isildur Elendil's son of Gondor.\s
+                      Here is the sword that was broken and is forged again!",
+                     password: 'password',
+                     password_confirmation: 'password',
+                     posts_counter: 0)
+    @user.skip_confirmation!
+    @user.save!
     @post = Post.create(title: 'My title', text: 'My text', author_id: @user.id, comments_counter: 0, likes_counter: 0)
   end
 
