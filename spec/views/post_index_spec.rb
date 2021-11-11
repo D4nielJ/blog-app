@@ -19,19 +19,28 @@ RSpec.describe 'Index page', type: :feature do
     @post4 = Post.create(title: 'article 4', text: 'My text', author_id: @user.id, comments_counter: 0,
                          likes_counter: 0)
 
-    @comment1 = Comment.create(text: 'My comment', author_id: @user.id, post_id: @post1.id)
+    @comment1 = Comment.create(text: 'My comment', author_id: @user.id, post_id: @post2.id)
   end
 
   describe 'index page' do
     it 'shows the right content' do
-      visit user_post_path(@user, @post1)
-      assert_current_path(user_post_path(@user, @post1))
-      expect(page).to have_content(@post1.title)
-      expect(page).to have_content('Likes: 0')
-      expect(page).to have_content('Comments: 0')
-      expect(page).to have_content('Please sign in')
-      expect(page).to have_content('Back')
+      visit user_posts_path(@user)
+      assert_current_path("/users/#{@user.id}/posts")
+      expect(page).to have_xpath("//img[contains(@src, #{@user.photo_link})]")
+      expect(page).to have_content('Aragorn II Elessar')
+      expect(page).to have_content('Number of posts: 0')
+      expect(page).to have_content(@post2.title)
+      expect(page).to have_content(@post2.text)
       expect(page).to have_content(@comment1.text)
+      expect(page).to have_content('Likes: 0')
+      expect(page).to have_content('Load more...')
+    end
+
+    it 'redirects to the correct post' do
+      visit user_posts_path(@user)
+      click_on 'Load more'
+      click_on @post4.title
+      assert_current_path(user_post_path(@user, @post4))
     end
   end
 end
