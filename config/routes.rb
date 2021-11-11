@@ -8,6 +8,15 @@ Rails.application.routes.draw do
     end
   end
 
+  # namespace :api, path: '', constraints: { subdomain: 'api' } do
+  namespace :api, defaults: { format: :json } do
+    resources :users do
+      resources :posts do
+        resources :comments
+      end
+    end
+  end
+
   get 'new', to: 'posts#new' # new post
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
