@@ -8,4 +8,8 @@ class Comment < ApplicationRecord
     counter = post.comments.count('id')
     post.update(comments_counter: counter)
   end
+
+  def as_json(_options = {})
+    super(except: %i[updated_at])
+  end
 end
