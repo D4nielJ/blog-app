@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
+    post 'login', to: 'authentication#authenticate'
+    post 'signup', to: 'users#create'
     resources :users do
       resources :posts do
         resources :comments
@@ -17,8 +19,6 @@ Rails.application.routes.draw do
   end
 
   get 'new', to: 'posts#new' # new post
-  post 'auth/login', to: 'api/authentication#authenticate'
-  post 'signup', to: 'api/users#create'
 
   # Very pretty -->
   # namespace :api, path: '', constraints: { subdomain: 'api' } do
