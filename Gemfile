@@ -26,6 +26,8 @@ gem 'devise'
 # Use cancancan to setup roles and manage authorization
 gem 'cancancan', '~> 1.9'
 
+gem 'jwt'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
