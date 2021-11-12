@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  include Response
+  include ExceptionHandler
+
+  protect_from_forgery if: :json_request # return null session when API call
+  protect_from_forgery with: :exception, unless: :json_request
+
+  before_action :authorize_request, if: :json_request
+  # before_action :authenticate_user!, unless: :json_request
+
+  attr_reader :current_user
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
@@ -13,5 +22,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(:name, :bio, :photo, :email, :password, :current_password)
     end
+  end
+
+  private
+
+  def json_request
+    request.format.json?
+  end
+
+  def authorize_request
+    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
   end
 end
