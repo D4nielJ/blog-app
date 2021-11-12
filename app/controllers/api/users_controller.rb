@@ -28,8 +28,7 @@ class Api::UsersController < ApplicationController
       :email,
       :bio,
       :photo,
-      :password,
-      :current_password
+      :password
     )
   end
 end

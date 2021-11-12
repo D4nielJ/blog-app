@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   get 'new', to: 'posts#new' # new post
-  post 'auth/login', to: 'authentication#authenticate'
+  post 'auth/login', to: 'api/authentication#authenticate'
   post 'signup', to: 'api/users#create'
 
   # Very pretty -->
