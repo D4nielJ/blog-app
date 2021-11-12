@@ -61,7 +61,7 @@ RSpec.configure do |config|
 
   config.include RequestSpecHelper
   config.include ControllerSpecHelper
-  
+
   config.include RequestSpecHelper, type: :request
 
   # Madeintandem article on:
