@@ -26,6 +26,8 @@ gem 'devise'
 # Use cancancan to setup roles and manage authorization
 gem 'cancancan', '~> 1.9'
 
+gem 'jwt'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -57,6 +59,9 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'webdrivers'
 end
 

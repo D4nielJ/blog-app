@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }
 
+  # Custom
+
   def update_author_posts
     counter = author.posts.count('id')
     author.update(posts_counter: counter)
@@ -20,4 +22,16 @@ class Post < ApplicationRecord
   def five_recent_comments
     recent_comments(5)
   end
+
+  ## Extending as_json method
+
+  def as_json(_options = {})
+    super(only: %i[id title text comments_counter likes_counter], include: :comments)
+  end
+
+  # Pretty examples -->
+  # super(only: %i[id title text comments_counter likes_counter], include: { author: { only: %i[id name] } })
+
+  # super(only: %i[id title text comments_counter
+  #   likes_counter], include: [:comments, { author: { only: %i[id name] } }])
 end
