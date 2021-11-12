@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get 'new', to: 'posts#new' # new post
   post 'auth/login', to: 'authentication#authenticate'
-  post 'signup', to: 'users#create'
+  post 'signup', to: 'api/users#create'
 
   # Very pretty -->
   # namespace :api, path: '', constraints: { subdomain: 'api' } do
