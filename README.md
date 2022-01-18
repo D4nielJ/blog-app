@@ -10,9 +10,9 @@ The Blog app is a classic example of a blog website. Fully functional website th
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby on Rails
+- Devise
+- Tailwindcss
 
 <!-- ## Live Demo
 
